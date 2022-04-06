@@ -1,10 +1,10 @@
 <template>
   <div>
-    <header>
-      <Header />
-    </header>
+    <Header />
     <main>
-      <PostIndex />
+      <div class="container my-3">
+        <router-view> </router-view>
+      </div>
     </main>
     <footer></footer>
   </div>
