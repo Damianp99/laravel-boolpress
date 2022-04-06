@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <router-link class="navbar-brand" :to="{ name: 'home' }"
+        >Home</router-link
+      >
       <button
         class="navbar-toggler"
         type="button"
@@ -15,13 +17,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" href="#"
-            >Home <span class="sr-only">(current)</span></a
-          >
+          <router-link class="nav-link" :to="{ name: 'contacts' }">
+            Contacts <span class="sr-only">(current)</span>
+          </router-link>
+          <a class="nav-link" href="/admin">Admin</a>
         </div>
       </div>
     </nav>
-  </div>
+  </header>
 </template>
 
 <script>
