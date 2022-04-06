@@ -1,12 +1,25 @@
 <template>
   <div class="container">
-    <ul>
-      <li v-for="post in posts" :key="post.id">
-        <div>
-          <h3>{{ post.title }}</h3>
+    <div v-for="post in posts" :key="post.id">
+      <div class="card m-3">
+        <img src="" class="card-img-top" alt="Immagine Post" />
+        <div class="card-body">
+          <h3 class="card-title">{{ post.title }}</h3>
+          <div class="d-flex">
+            <p class="card-text col-9">
+              {{ post.description }}
+            </p>
+            <div class="col-3">
+              <!-- da inserire info generali -->
+              <span>{{ post.updated_at }}</span>
+              <span>{{ post.updated_at }}</span>
+              <span>{{ post.updated_at }}</span>
+            </div>
+          </div>
+          <a href="#" class="btn btn-primary">SHOW LINK</a>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,6 +33,7 @@ export default {
       indexUrl: "http://localhost:8000/api/posts",
     };
   },
+
   methods: {
     getPosts() {
       axios
@@ -36,6 +50,7 @@ export default {
         });
     },
   },
+
   mounted() {
     this.getPosts();
   },
