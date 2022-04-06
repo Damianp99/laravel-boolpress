@@ -1,32 +1,14 @@
 <template>
-  <div class="container">
-    <div v-for="post in posts" :key="post.id">
-      <div class="card m-3">
-        <img src="" class="card-img-top" alt="Immagine Post" />
-        <div class="card-body">
-          <h3 class="card-title">{{ post.title }}</h3>
-          <div class="d-flex">
-            <p class="card-text col-9">
-              {{ post.description }}
-            </p>
-            <div class="col-3">
-              <!-- da inserire info generali -->
-              <span>{{ post.updated_at }}</span>
-              <span>{{ post.updated_at }}</span>
-              <span>{{ post.updated_at }}</span>
-            </div>
-          </div>
-          <a href="#" class="btn btn-primary">SHOW LINK</a>
-        </div>
-      </div>
-    </div>
+  <div>
+    <PostCard v-for="post in posts" :key="post.id" :post="post" />
   </div>
 </template>
 
 <script>
+import PostCard from "./PostCard.vue";
 export default {
   name: "PostIndex",
-  components: {},
+  components: { PostCard },
   data() {
     return {
       posts: [],
